@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+i {
+  font-size: 35px;
+  cursor: pointer;
+  margin: 0 10px;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+i:hover {
+  transform: scale(1.1);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px 0;
+}
+
+.shopping-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 3%;
+  margin: 50px 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.total-price {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 20px 40px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.total-price span {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.total {
+  font-weight: bold;
+  color: #ffeb3b;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.list-products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.card {
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  overflow: hidden;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card-img-top {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 4px solid #667eea;
+  transition: transform 0.3s ease;
+}
+
+.card-img-top:hover {
+  transform: scale(1.1);
+}
+
+.card-title {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.card-text {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.unit-price {
+  color: #667eea;
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.quantity {
+  font-size: 25px;
+  font-weight: bold;
+  color: #333;
+  min-width: 40px;
+  display: inline-block;
+  background: #f8f9fa;
+  padding: 5px 15px;
+  border-radius: 25px;
+  border: 2px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.card-body div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  gap: 15px;
+}
+
+.fa-plus-circle {
+  color: #28a745;
+}
+
+.fa-minus-circle {
+  color: #ffc107;
+}
+
+.fa-trash-alt {
+  color: #dc3545;
+}
+
+.fa-heart {
+  color: #6c757d;
+  transition: color 0.3s ease;
+}
+
+.fa-heart.liked {
+  color: #e91e63;
+  animation: heartBeat 0.6s ease;
+}
+
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #667eea !important;
+  font-size: 1.5rem;
+}
+
+.btn-outline-success {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.btn-outline-success:hover {
+  background-color: #667eea;
+  border-color: #667eea;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .list-products {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .total-price span {
+    font-size: 24px;
+  }
+  
+  i {
+    font-size: 28px;
+    margin: 0 5px;
+  }
+  
+  .quantity {
+    font-size: 20px;
+    padding: 3px 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .shopping-card-container {
+    padding: 20px;
+    margin: 20px 10px;
+  }
+  
+  .total-price {
+    padding: 15px 25px;
+  }
+  
+  .total-price span {
+    font-size: 20px;
+  }
+  
+  .card {
+    padding: 15px;
+  }
+  
+  .card-img-top {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .unit-price {
+    font-size: 1.5rem;
+  }
+}
